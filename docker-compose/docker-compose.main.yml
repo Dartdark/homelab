@@ -1,0 +1,118 @@
+version: '3.8'
+
+services:
+  # 1. Kavita — Manga, Comics, & Books Server
+  kavita:
+    image: jvmilazz0/kavita:latest
+    container_name: kavita
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - D:/BucketMedia/Homelab/kavita/config:/kavita/config
+      - D:/BucketMedia/Manga:/manga
+      - D:/BucketMedia/Comics:/comics
+      - D:/BucketMedia/Books:/books
+
+  # 2. Audiobookshelf — Audiobooks & Podcasts Server
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    restart: unless-stopped
+    ports:
+      - "13378:80"
+    environment:
+      - TZ=America/Los_Angeles
+      - AUDIOBOOKSHELF_UID=99
+      - AUDIOBOOKSHELF_GID=100
+    volumes:
+      - D:/BucketMedia/Audiobooks:/audiobooks
+      - D:/BucketMedia/Podcasts:/podcasts
+      - D:/BucketMedia/Homelab/audiobookshelf/config:/config
+      - D:/BucketMedia/Homelab/audiobookshelf/metadata:/metadata
+
+  # 3. Jellyfin — Personal Movies & Series Streaming Server
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    ports:
+      - "8096:8096"
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - D:/BucketMedia/Homelab/jellyfin/config:/config
+      - D:/BucketMedia/Homelab/jellyfin/cache:/cache
+      - D:/BucketMedia/Movies:/media/movies
+      - D:/BucketMedia/Shows:/media/shows
+
+  # 4. Homarr — Master Homelab Dashboard
+  homarr:
+    image: ghcr.io/ajnart/homarr:latest
+    container_name: homarr
+    restart: unless-stopped
+    ports:
+      - "7575:7575"
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - D:/BucketMedia/Homelab/homarr/configs:/app/data/configs
+      - D:/BucketMedia/Homelab/homarr/data:/data
+      - D:/BucketMedia/Homelab/homarr/icons:/app/public/icons
+
+  # 5. Navidrome — Personal Music & Lossless Audio Streaming Server (Spotify Alternative)
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+    ports:
+      - "4533:4533"
+    environment:
+      - TZ=America/Los_Angeles
+      - ND_SCANSCHEDULE=1h
+      - ND_LOGLEVEL=info
+      - ND_SESSIONTIMEOUT=8760h
+    volumes:
+      - D:/BucketMedia/Homelab/navidrome/data:/data
+      - D:/BucketMedia/Music:/music:ro
+
+  # 6. EmulatorJS — In-Browser Retro Arcade Server (NES, SNES, GBA, N64, PS1)
+  emulatorjs:
+    image: linuxserver/emulatorjs:1.9.2
+    container_name: emulatorjs
+    restart: unless-stopped
+    ports:
+      - "4000:80"
+      - "4001:3000"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+    volumes:
+      - D:/BucketMedia/Homelab/emulatorjs/config:/config
+      - D:/BucketMedia/Games/ROMs:/data
+
+  # 7. Kiwix — Offline Knowledge & Prepper Wikipedia Library
+  kiwix:
+    image: ghcr.io/kiwix/kiwix-serve:latest
+    container_name: kiwix
+    restart: unless-stopped
+    ports:
+      - "8085:8080"
+    volumes:
+      - D:/BucketMedia/Knowledge/zim:/data
+    command:
+      - "*.zim"
+
+  # 8. Portainer — Visual Management for Docker Containers
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - D:/BucketMedia/Homelab/portainer/data:/data

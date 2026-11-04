@@ -1,0 +1,15 @@
+# Sensitive files & credentials
+*.env
+*.key
+*.pem
+*.sqlite3
+*.db
+*.log
+data/
+config/
+cache/
+
+# OS artifacts
+Thumbs.db
+Desktop.ini
+.DS_Store

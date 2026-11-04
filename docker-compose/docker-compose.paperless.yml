@@ -1,0 +1,32 @@
+services:
+  broker:
+    image: docker.io/library/redis:7-alpine
+    container_name: paperless-redis
+    restart: always
+    volumes:
+      - "D:/BucketMedia/Homelab/paperless/redis:/data"
+
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    container_name: paperless-webserver
+    restart: always
+    depends_on:
+      - broker
+    ports:
+      - "8000:8000"
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_URL: http://100.121.227.98:8000
+      PAPERLESS_TIME_ZONE: America/Los_Angeles
+      PAPERLESS_OCR_LANGUAGE: eng
+      PAPERLESS_SECRET_KEY: bdd-homelab-paperless-secure-key-2026
+      PAPERLESS_ADMIN_USER: admin
+      PAPERLESS_ADMIN_PASSWORD: admin
+      PAPERLESS_AUTO_LOGIN_USERNAME: admin
+      USERMAP_UID: 1000
+      USERMAP_GID: 1000
+    volumes:
+      - "D:/BucketMedia/Homelab/paperless/data:/usr/src/paperless/data"
+      - "D:/BucketMedia/Homelab/paperless/media:/usr/src/paperless/media"
+      - "D:/BucketMedia/Homelab/paperless/export:/usr/src/paperless/export"
+      - "D:/BucketMedia/Homelab/paperless/consume:/usr/src/paperless/consume"
