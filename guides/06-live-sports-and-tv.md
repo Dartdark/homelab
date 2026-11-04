@@ -4,13 +4,14 @@ This guide details how to watch live sporting events (NFL, NBA, UFC / PPV, Premi
 
 ---
 
-## 1. Why "All IPTV" Failed (The Paywall Trap & Codec Errors)
+## 1. Stremio App vs. Stremio Web: The "All IPTV" Codec Difference
 
-When testing the **All IPTV** addon, two errors occurred:
-1. **`🔒 Click to Unlock Premium Access`**: The addon creator deliberately paywalled the channels. Free streams were replaced with broken dummy placeholders to push users into buying a paid subscription.
-2. **`Video is not supported`**: Web browsers lack decoders for raw MPEG-TS (`.ts`) broadcast transport streams, whereas media players like VLC or Jellyfin can decode them.
+> 💡 **Important Discovery:** **All IPTV DOES work**, but **only in the native Stremio App** (Windows desktop, Android, Android TV, Firestick), **not in Stremio Web** (`web.stremio.com`).
 
-> 💡 **Takeaway:** Avoid "mass scraper" IPTV addons like All IPTV. They are paywalled advertisement traps.
+### Why it failed in the browser:
+* **Web Browser Codec Limitations:** Standard web browsers (Chrome, Edge, Safari) do not have native decoders for raw broadcast transport streams (MPEG-TS `.ts` files) and enforce strict CORS network restrictions. When Stremio Web tries to play raw IPTV feeds, the browser fails with `Video is not supported`.
+* **Why it works in the native App:** The standalone Stremio Desktop and TV apps have **libVLC / ExoPlayer** built directly into the player engine. This enables hardware decoding for all raw IPTV streams, cable feeds, and alternate audio tracks without browser limitations.
+* **Premium Prompts:** While some channels feature developer donation/premium prompts, thousands of live cable, news, and sports streams play completely fine inside the native desktop or TV app.
 
 ---
 
