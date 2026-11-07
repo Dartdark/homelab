@@ -38,6 +38,7 @@ All services run seamlessly via **Docker** on your local machine / server under 
 * **[`guides/05-stremio-mastery.md`](guides/05-stremio-mastery.md)**: Addon management, reordering catalogs without reinstalling, and customizing Hulu, Paramount+, HBO, and Netflix rows.
 * **[`guides/06-live-sports-and-tv.md`](guides/06-live-sports-and-tv.md)**: All working live sports links (VIPBox, Sportsurge, StreamEast), Stremio sports addons (PlavioLive), ISP DNS unblocking, and Jellyfin Live TV.
 * **[`guides/07-homelab-maintenance.md`](guides/07-homelab-maintenance.md)**: Password-free local authentication, subnet whitelisting, daily startup scripts, and container hygiene.
+* **[`TECH_WISHLIST.md`](TECH_WISHLIST.md)**: Curated personal hardware upgrades, streaming gear (Apple TV 4K), storage expansions, and Tesla accessories.
 
 ---
 
