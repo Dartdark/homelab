@@ -50,6 +50,29 @@
 
 ---
 
+## 🤖 The Future AI & Gaming Flagship (Nvidia RTX 5090 Custom Build)
+
+> Planned future workstation build designed to run and fine-tune private, uncensored 32B–70B AI coding models (rivaling Claude Code) and deliver flagship 4K gaming.
+
+* **Estimated Total Build Cost:** ~$3,500 – $3,900
+* **Priority:** 🟣 Long-Term Dream Build
+
+### Complete Component Specification
+
+| Component | Recommended Model | Est. Price | Role in the Build |
+| :--- | :--- | :--- | :--- |
+| **GPU** | **NVIDIA GeForce RTX 5090 (32GB GDDR7)** | ~$1,999 – $2,200 | 32GB high-speed GDDR7 VRAM runs 32B–70B abliterated coding models locally with zero cloud subscription fees. |
+| **CPU** | **AMD Ryzen 7 9800X3D** (or 7800X3D) | ~$450 – $480 | Undisputed top gaming & workload processor. Low power draw (~100W), PCIe 5.0 lanes, zero GPU bottlenecks. *(Alt for massive dataset processing: Ryzen 9 9950X).* |
+| **Motherboard** | **MSI MAG X870 Tomahawk** or **ASUS ROG Strix B650E-F** | ~$230 – $320 | Reinforced **PCIe 5.0 x16 slot** for full GPU throughput, heavy-duty VRM power delivery, and PCIe 5.0 M.2 lanes. |
+| **RAM (Memory)** | **64GB DDR5-6000 CL30** (2x 32GB, Corsair / G.Skill) | ~$190 – $220 | **2x VRAM Rule:** 64GB system memory allows caching massive token contexts and training datasets in memory. |
+| **Power Supply (PSU)**| **1200W ATX 3.1 / PCIe 5.1** (Seasonic Vertex GX-1200 / Corsair RM1200x) | ~$210 – $260 | Native **12V-2x6** (16-pin) high-current cable to safely deliver the 5090's ~600W max power draw and handle transient spikes. |
+| **Primary SSD** | **2TB or 4TB NVMe M.2 (Gen 4/5)** (Samsung 990 Pro / WD SN850X) | ~$170 – $290 | Blistering 7,400 MB/s read speeds to load 20GB–40GB AI model weights in under 3 seconds. *(Your current 1.8TB drive moves over as secondary storage).* |
+| **CPU Cooler** | **360mm AIO Liquid Cooler** (Arctic Liquid Freezer III 360 / Lian Li Galahad II) | ~$110 – $160 | Whispering-quiet 360mm liquid cooling keeps CPU under 70°C even under sustained compilation loads. |
+| **PC Case** | **High-Airflow Chassis (400mm+ GPU Clearance)** (Lian Li O11 EVO / Fractal North XL / NZXT H9) | ~$150 – $190 | Massive internal volume to easily house a 4-slot 350mm GPU and exhaust ~750W of combined thermal dissipation. |
+| **GPU Bracket** | **Heavy-Duty Metal Anti-Sag Support Column** | ~$15 | Protects the motherboard PCIe slot from cracking under the weight of a 5-pound graphics card. |
+
+---
+
 ## 🎧 Mobile & Lifestyle Gear
 
 ### 6. 🎧 AirPods Pro (2nd Gen with USB-C)
