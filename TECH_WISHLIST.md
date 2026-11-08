@@ -29,10 +29,10 @@
 
 ### 3. 💾 High-Capacity Server Drive (Seagate Exos 16TB / 18TB 7200RPM Enterprise HDD)
 * **Estimated Price:** ~$190 – $240
-* **Priority:** 🔴 High
+* **Priority:** 🟢 Low / Far Future Expansion
 * **Why it fits your setup:**
-  * **Storage Freedom:** Your current `D:\` drive is hovering near full capacity (~1.8TB total with Docker, movies, lossless music, and retro ROMs).
-  * **Unrestricted 4K & Lossless Media:** Freely download full 4K Blu-ray remuxes, complete discographies in FLAC, and high-res photo archives without worrying about disk warnings.
+  * **Current Status:** You currently have **1.04 TB (1,072 GB) free** out of 1.80 TB on your `D:\` drive. You have plenty of headroom for hundreds of movies and thousands of FLAC tracks.
+  * **When to buy:** Only worth considering far down the line when you start filling multiple terabytes of uncompressed 4K Blu-ray remuxes.
 
 ### 4. ⚡ Dedicated 24/7 Mini PC Server (Intel N100 / Beelink S12 Pro or Minisforum)
 * **Estimated Price:** ~$160 – $190
