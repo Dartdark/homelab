@@ -43,8 +43,8 @@ services:
     environment:
       - TZ=America/Los_Angeles
     volumes:
-      - D:/BucketMedia/Homelab/jellyfin/config:/config
-      - D:/BucketMedia/Homelab/jellyfin/cache:/cache
+      - jellyfin_config:/config
+      - jellyfin_cache:/cache
       - D:/BucketMedia/Movies:/media/movies
       - D:/BucketMedia/Shows:/media/shows
 
@@ -116,3 +116,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - D:/BucketMedia/Homelab/portainer/data:/data
+
+volumes:
+  jellyfin_config:
+    name: jellyfin_config
+    external: true
+  jellyfin_cache:
+    name: jellyfin_cache
+    external: true
+
