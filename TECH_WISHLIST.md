@@ -38,7 +38,7 @@
 * **Estimated Price:** ~$160 – $190
 * **Priority:** 🟢 Nice to Have
 * **Why it fits your setup:**
-  * **Dedicated Homelab:** Moves your 20+ Docker containers (Jellyfin, Navidrome, Immich, Paperless, Stremio) off your main desktop PC onto a dedicated, whisper-quiet appliance.
+  * **Dedicated Homelab:** Moves your Docker containers (Jellyfin, Navidrome, Kavita, Stremio, qBittorrent) off your main desktop PC onto a dedicated, whisper-quiet appliance.
   * **Power Efficiency:** Draws only ~6W at idle compared to a full desktop rig running 24/7.
   * **Hardware Transcoding:** The Intel N100 features built-in Intel QuickSync with hardware AV1/HEVC decode for multi-stream remote video playback.
 

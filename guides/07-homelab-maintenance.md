@@ -18,15 +18,6 @@ To avoid typing passwords constantly while on your home network, services are co
   ```
   *Local devices connect directly without any login prompt.*
 
-### Paperless-ngx (`http://localhost:8000`)
-* **Auto-Login Enabled:**
-  In `D:\BucketMedia\Homelab\paperless\docker-compose.yml`:
-  ```yaml
-  environment:
-    PAPERLESS_AUTO_LOGIN_USERNAME: admin
-  ```
-  *Opens straight into your document archive.*
-
 ### Navidrome (`http://localhost:4533`)
 * **1-Year Session Timeout:**
   In `D:\BucketMedia\Homelab\docker-compose.yml`:

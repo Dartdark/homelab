@@ -1,6 +1,6 @@
 # 🏰 The Ultimate Self-Hosted Homelab
 
-> A comprehensive, automated self-hosted ecosystem for high-definition media streaming, retro gaming, lossless audio, book & manga reading, photo management, paperless archiving, and live sports.
+> A comprehensive, automated self-hosted ecosystem for high-definition media streaming, retro gaming, lossless audio, book & manga reading, offline knowledge, and live sports.
 
 ---
 
@@ -16,8 +16,6 @@ All services run seamlessly via **Docker** on your local machine / server under 
 | **[Kavita](http://localhost:5000)** | `:5000` | 📚 Books & Manga | Web-based digital library for Manga (.cbz), Comics, and E-books (.epub, .pdf). |
 | **[Audiobookshelf](http://localhost:13378)** | `:13378` | 🎧 Audiobooks | Audiobooks and podcasts streaming server with playback progress sync and mobile apps. |
 | **[EmulatorJS](http://localhost:4000)** | `:4000` / `:4001` | 🕹️ Gaming | In-browser retro arcade (NES, SNES, GBA, N64, Genesis, PS1). Save states & gamepads supported. |
-| **[Immich](http://localhost:2283)** | `:2283` | 📸 Photos | High-performance Google Photos alternative with AI facial recognition, object detection, and mobile auto-backup. |
-| **[Paperless-ngx](http://localhost:8000)** | `:8000` | 📄 Documents | Document archiving system with automatic OCR, tagging, search, and automatic login enabled. |
 | **[Kiwix](http://localhost:8085)** | `:8085` | 🧠 Knowledge | 100% offline Wikipedia, WikiMed, and reference encyclopedia library. |
 | **[Homarr](http://localhost:7575)** | `:7575` | 🧭 Dashboard | Customizable master dashboard linking all homelab services into one homepage. |
 | **[qBittorrent](http://localhost:8080)** | `:8080` | ⚡ Downloader | Headless BitTorrent client with integrated Nova search plugins, category auto-paths, and local subnet auto-login. |
@@ -52,8 +50,6 @@ Double-click `D:\BucketMedia\Start_Homelab.bat` or run:
 ```powershell
 cd D:\BucketMedia\Homelab
 docker compose up -d
-cd immich && docker compose up -d
-cd ../paperless && docker compose up -d
 ```
 
 ### Stop All Services:
@@ -61,8 +57,6 @@ Double-click `D:\BucketMedia\Stop_Homelab.bat` or run:
 ```powershell
 cd D:\BucketMedia\Homelab
 docker compose down
-cd immich && docker compose down
-cd ../paperless && docker compose down
 ```
 
 ---
@@ -72,7 +66,6 @@ cd ../paperless && docker compose down
 Your homelab is configured so you don't have to keep typing passwords while on your home network:
 
 * **qBittorrent (`:8080`)**: Local network whitelisted (`AuthSubnetWhitelistEnabled=true`). Automatically logs in without credentials. *(Fallback: `Dartdark` / `Dartdark123`)*.
-* **Paperless-ngx (`:8000`)**: Set to `PAPERLESS_AUTO_LOGIN_USERNAME: admin`. Opens straight to documents.
 * **Navidrome (`:4533`)**: Session timeout set to 1 year (`ND_SESSIONTIMEOUT=8760h`). Stays permanently signed in.
 * **Jellyfin (`:8096`)**: Swiftfin & browser sessions persist indefinitely.
 * **Dozzle, OpenSpeedTest, Kiwix**: Zero passwords required.
